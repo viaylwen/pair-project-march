@@ -1,0 +1,38 @@
+[
+    {
+        "category": "Asian Food",
+        "name": "Shirataki Fried Rice",
+        "day": "Monday",
+        "rating": 5
+    },
+    {
+        "category": "Western Food",
+        "name": "Hamburger",
+        "day": "Tuesday",
+        "rating": 3
+    },
+    {
+        "category": "Vegetarian Food",
+        "name": "Caesar Salad",
+        "day": "Wednesday",
+        "rating": 5
+    },
+    {
+        "category": "Asian Food",
+        "name": "Ramen",
+        "day": "Thursday",
+        "rating": 4
+    },
+    {
+        "category": "Western Food",
+        "name": "Crispy Fried Chicken",
+        "day": "Friday",
+        "rating": 5
+    },
+    {
+        "category": "Vegetarian Food",
+        "name": "Gado-Gado",
+        "day": "Saturday",
+        "rating": 5
+    }
+]

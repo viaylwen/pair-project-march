@@ -1,4 +1,4 @@
-const {Customer} = require('../models')
+const {Customer, Menu, MenuOrder} = require('../models')
 
 class CustomerController {
     static findAll(req, res) {
@@ -71,6 +71,64 @@ class CustomerController {
             res.send(err)
         })
     }
+
+    static addMenu(req, res) {
+        let dataCust = ''
+        let dataMenu = ''
+
+        Customer.findOne({
+            where: { id : +req.params.id }
+        })
+            .then(customer => {
+                dataCust = customer
+                return Menu.findAll()
+            })
+            .then(menu => {
+                dataMenu = menu
+                return MenuOrder.findAll({
+                    include: [
+                        { model: Menu }
+                    ],
+                    where: { CustomerId: +req.params.id}
+                })
+            })
+            .then(data => {
+                res.render('CustomerFormAddMenu', {dataCust, dataMenu, data})
+            })
+            .catch(err => {
+                res.send(err)
+                console.log(err)
+            })
+    }
+
+    static postMenu(req, res) {
+        let newMenuOrder = {
+            CustomerId: req.params.id,
+            MenuId: req.body.MenuId
+        }
+        MenuOrder.create(newMenuOrder)
+            .then(menuOrder => {
+                res.redirect(`/customer/${req.params.id}/myorder`)
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static menuOrder(req, res) {
+        let id = +req.params.id
+        Customer.findOne({
+            include: Menu,
+            where: {id}
+        })
+        .then(customer => {
+            res.render('CustomerMenuOrder', {customer})
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
 }
 
 module.exports = CustomerController

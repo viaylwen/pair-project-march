@@ -10,6 +10,6 @@ menuRouter.post('/add', MenuController.addCreate)
 menuRouter.get('/edit/:id', MenuController.editForm)
 menuRouter.post('/edit/:id', MenuController.editUpdate)
 
-menuRouter.delete('/delete/:id', MenuController.deleteOne)
+menuRouter.get('/delete/:id', MenuController.deleteOne)
 
 module.exports = menuRouter

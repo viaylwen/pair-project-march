@@ -1,5 +1,47 @@
+const {Customer} = require('../models')
+
 class CustomerController {
-    static()
+    static findAll(req, res) {
+        Customer.findAll()
+        .then(customers => {
+            res.render('customers', {customers})
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static addForm(req, res) {
+        res.render('addFormCust')
+    }
+
+    static addCreate(req, res) {
+        let newCust = {
+            name: req.body.name,
+            username: req.body.username,
+            password: req.body.password
+        }
+
+        Customer.create(newCust)
+            .then(customers => {
+                res.redirect('/customers')
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
+    static deleteOne(req, res) {
+        Customer.destroy({
+            where: {id: req.params.id}
+        })
+        .then(customers => {
+            res.redirect('/customers')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
 }
 
 module.exports = CustomerController

@@ -4,7 +4,7 @@ class CustomerController {
     static findAll(req, res) {
         Customer.findAll()
         .then(customers => {
-            res.render('customers', {customers})
+            res.render('Customer', {customers})
         })
         .catch(err => {
             res.send(err)
@@ -12,19 +12,20 @@ class CustomerController {
     }
 
     static addForm(req, res) {
-        res.render('addFormCust')
+        res.render('FormAddCustomer')
     }
 
     static addCreate(req, res) {
         let newCust = {
             name: req.body.name,
             username: req.body.username,
-            password: req.body.password
+            password: req.body.password,
+            email: req.body.email
         }
 
         Customer.create(newCust)
             .then(customers => {
-                res.redirect('/customers')
+                res.redirect('/customer')
             })
             .catch(err => {
                 res.send(err)
@@ -36,7 +37,7 @@ class CustomerController {
             where: {id: req.params.id}
         })
         .then(customers => {
-            res.redirect('/customers')
+            res.redirect('/customer')
         })
         .catch(err => {
             res.send(err)

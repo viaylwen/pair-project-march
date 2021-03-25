@@ -4,7 +4,7 @@ class MenuController {
     static findAll(req, res) {
         Menu.findAll()
             .then(menus => {
-                res.render('menu', {menus})
+                res.render('Menu', {menus})
             })
             .catch(err => {
                 res.send(err)
@@ -15,7 +15,7 @@ class MenuController {
         let id = +req.params.id
         Menu.findByPk(id)
             .then(menu => {
-                res.render('editFormMenu', {menu})
+                res.render('FormAddMenu', {menu})
             })
             .catch(err => {
                 res.send(err)

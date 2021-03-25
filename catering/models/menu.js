@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Menu.belongsToMany(models.Customer, {
+        through: models.MenuOrder,
+        foreignKey: 'MenuId'
+      })
     }
   };
   Menu.init({

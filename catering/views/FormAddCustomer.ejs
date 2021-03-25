@@ -56,20 +56,56 @@
             text-decoration: none;
             font-size: 14px;
         }
+
+        input[type=text], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 50%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
+<body>
     <ul class="topnav">
         <li><a class="active" href="/">Home</a></li>
         <li><a href="//customer/:id/add-menu">Start Planning</a></li>
         <li><a href="/customer/:id/myorder">My Meal Plan</a></li>
     </ul>
-<center>
-<body>
-    <h1>Welcome to Marvee Catering</h1>
-    <a href="/customer/add"><input type="button" value="Register Customer" class="button" style="color: burlywood;"></a>        
+    <center>
+    <h2 center> Register New Customer </h2>
+    <form action="/customer/add" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name='name' placeholder="e.g:John"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name='email' placeholder="e.g:JohnDoe"><br>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name='username' placeholder="e.g:JohnDoe"><br>
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name='password'><br>
+        <input type="submit" value="Add Data">
+        </form>
+    </center>
 </body>
-</center>
-    <div class="navbar">
+<div class="navbar">
     <a>Marvee Catering © 2021</a>
-  </div>
+    </div>
 </html>

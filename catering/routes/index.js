@@ -4,7 +4,7 @@ const menuRouter = require('./menuRouter')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    res.render('home')
+    res.render('Home')
 })
 
 router.use('/menu', menuRouter)

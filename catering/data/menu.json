@@ -1,25 +1,61 @@
 [
     {
-        "category": "Asian Food",
-        "name": "Shirataki Fried Rice",
+        "category": "Indonesian Food",
+        "name": "Bubur Ayam Cirebon",
         "day": "Monday",
+        "rating": 5
+    },
+    {
+        "category": "Indonesian Food",
+        "name": "Rawon Daging",
+        "day": "Tuesday",
+        "rating": 3
+    },
+    {
+        "category": "Indonesian Food",
+        "name": "Sayur Asem Empal",
+        "day": "Wednesday",
+        "rating": 5
+    },
+    {
+        "category": "Indonesian Food",
+        "name": "Nasi Timbel",
+        "day": "Thursday",
+        "rating": 4
+    },
+    {
+        "category": "Indonesian Food",
+        "name": "Sayur Lodeh",
+        "day": "Friday",
+        "rating": 5
+    },
+    {
+        "category": "Indonesian Food",
+        "name": "Gudeg Krecek",
+        "day": "Saturday",
         "rating": 5
     },
     {
         "category": "Western Food",
         "name": "Hamburger",
+        "day": "Monday",
+        "rating": 5
+    },
+    {
+        "category": "Western Food",
+        "name": "Taco",
         "day": "Tuesday",
         "rating": 3
     },
     {
-        "category": "Vegetarian Food",
-        "name": "Caesar Salad",
+        "category": "Western Food",
+        "name": "Spaghetti Bolognaise",
         "day": "Wednesday",
         "rating": 5
     },
     {
-        "category": "Asian Food",
-        "name": "Ramen",
+        "category": "Western Food",
+        "name": "Chicken Steak",
         "day": "Thursday",
         "rating": 4
     },
@@ -30,7 +66,43 @@
         "rating": 5
     },
     {
-        "category": "Vegetarian Food",
+        "category": "Western Food",
+        "name": "Fish and Chips",
+        "day": "Saturday",
+        "rating": 5
+    },
+    {
+        "category": "Healthy Food",
+        "name": "Shirataki Fried Rice",
+        "day": "Monday",
+        "rating": 5
+    },
+    {
+        "category": "Healthy Food",
+        "name": "Udon with Oden",
+        "day": "Tuesday",
+        "rating": 3
+    },
+    {
+        "category": "Healthy Food",
+        "name": "Caesar Salad",
+        "day": "Wednesday",
+        "rating": 5
+    },
+    {
+        "category": "Healthy Food",
+        "name": "Tomato Soup with Garlic Bread",
+        "day": "Thursday",
+        "rating": 4
+    },
+    {
+        "category": "Healthy Food",
+        "name": "Lontong Sayur",
+        "day": "Friday",
+        "rating": 5
+    },
+    {
+        "category": "Healthy Food",
         "name": "Gado-Gado",
         "day": "Saturday",
         "rating": 5

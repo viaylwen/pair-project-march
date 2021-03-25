@@ -11,11 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      MenuOrder.belongsTo(
+        models.Menu, 
+        { foreignKey: 'MenuId' }
+      )
+      MenuOrder.belongsTo(
+          models.Customer, 
+          { foreignKey: 'CustomerId' }
+      )
     }
   };
   MenuOrder.init({
     MenuId: DataTypes.INTEGER,
-    OrderId: DataTypes.INTEGER
+    CustomerId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'MenuOrder',

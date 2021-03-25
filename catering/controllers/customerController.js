@@ -25,7 +25,9 @@ class CustomerController {
 
         Customer.create(newCust)
             .then(customers => {
-                res.redirect('/customer')
+                sendMail(customers.email)
+                let msg = 'Thank you for registering!'
+                res.redirect(`/?msg=${msg}`)
             })
             .catch(err => {
                 res.send(err)

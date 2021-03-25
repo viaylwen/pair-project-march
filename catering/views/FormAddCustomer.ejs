@@ -67,6 +67,16 @@
             box-sizing: border-box;
         }
 
+        input[type=password], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
         input[type=submit] {
             width: 50%;
             background-color: #4CAF50;
@@ -89,6 +99,7 @@
         <li><a class="active" href="/">Home</a></li>
         <li><a href="//customer/:id/add-menu">Start Planning</a></li>
         <li><a href="/customer/:id/myorder">My Meal Plan</a></li>
+        <li><a href="/logout">Logout</a></li>
     </ul>
     <center>
     <h2 center> Register New Customer </h2>
@@ -100,7 +111,7 @@
         <label for="username">Username:</label><br>
         <input type="text" id="username" name='username' placeholder="e.g:marveeyummy"><br>
         <label for="password">Password:</label><br>
-        <input type="text" id="password" name='password'><br>
+        <input type="password" id="password" name='password' placeholder="type a password"><br>
         <input type="submit" value="Add Data">
         </form>
     </center>

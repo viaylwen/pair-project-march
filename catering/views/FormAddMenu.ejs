@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvee Catering</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        ul.topnav li {float: left;}
+
+        ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+        ul.topnav li a.active {background-color: #4CAF50;}
+
+        ul.topnav li.right {float: right;}
+
+        @media screen and (max-width: 600px) {
+        ul.topnav li.right, 
+        ul.topnav li {float: none;}
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #111;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        input[type=text], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 50%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <ul class="topnav">
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/customer">Customer</a></li>
+    </ul>
+    <center>
+    <h2 center> Add Menu </h2>
+    <form action="/menu/add" method="POST">
+        <label for="category">Category:</label><br>
+        <select id="category" name="category">
+            <option selected disabled>-- Select Category --</option>
+            <option value="Indonesian Food">Indonesian Food</option>
+            <option value="Western Food">Western Food</option>
+            <option value="Healthy Food">Healthy Food</option>
+        </select><br><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name='name' placeholder="e.g:Ketoprak"><br>
+        <label for="day">Day : </label><br>
+        <select id="day" name="day">
+            <option selected disabled>-- Select Day --</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+        </select><br><br>
+        <label for="rating">Rating:</label><br>
+        <input type="text" id="rating" name='rating'><br>
+        <input type="submit" value="Add New Menu">
+        </form>
+    </center>
+</body>
+<div class="navbar">
+    <a>Marvee Catering © 2021</a>
+    </div>
+</html>

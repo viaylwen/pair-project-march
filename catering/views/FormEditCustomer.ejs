@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marvee Catering</title>
     <style>
@@ -87,25 +86,37 @@
 <body>
     <ul class="topnav">
         <li><a class="active" href="/">Home</a></li>
-        <li><a href="//customer/:id/add-menu">Start Planning</a></li>
-        <li><a href="/customer/:id/myorder">My Meal Plan</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/customer">Customer</a></li>
     </ul>
     <center>
-    <h2 center> Register New Customer </h2>
-    <form action="/customer/add" method="POST">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name='name' placeholder="e.g:Marvee"><br>
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name='email' placeholder="e.g:marvee@hacktiv8.com"><br>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name='username' placeholder="e.g:marveeyummy"><br>
-        <label for="password">Password:</label><br>
-        <input type="text" id="password" name='password'><br>
-        <input type="submit" value="Add Data">
+        <h2 center> Edit Customer</h2>
+        <form action="/customer/edit/<%= customer.id %>" method="POST">
+            <div>
+                <label for="name"> Name:</label><br>
+                <input type="text" id="name" name="name" value="<%= customer.name %>"/>
+                <br></br>
+            </div>
+            <div>
+                <label for="email"> Email:</label><br>
+                <input type="text" id="email" name="email" value="<%= customer.email %>"/>
+                <br></br>
+            </div>     
+            <div>
+                <label for="username"> Username:</label><br>
+                <input type="text" id="username" name="username" value="<%= customer.username %>"/>
+                <br></br>    
+            </div>
+            <div>
+                <label for="password"> Password:</label><br>
+                <input type="text" id="password" name="password" value="<%= customer.password %>"/>
+                <br></br>    
+            </div>      
+           <input type="submit" value="Edit Customer"/>
         </form>
     </center>
-</body>
-<div class="navbar">
-    <a>Marvee Catering © 2021</a>
+    </body>
+    <div class="navbar">
+        <a>Marvee Catering © 2021</a>
     </div>
 </html>

@@ -87,21 +87,34 @@
 <body>
     <ul class="topnav">
         <li><a class="active" href="/">Home</a></li>
-        <li><a href="//customer/:id/add-menu">Start Planning</a></li>
-        <li><a href="/customer/:id/myorder">My Meal Plan</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/customer">Customer</a></li>
     </ul>
     <center>
-    <h2 center> Register New Customer </h2>
-    <form action="/customer/add" method="POST">
+    <h2 center> Add Menu </h2>
+    <form action="/menu/add" method="POST">
+        <label for="category">Category:</label><br>
+        <select id="category" name="category">
+            <option selected disabled>-- Select Category --</option>
+            <option value="Indonesian Food">Indonesian Food</option>
+            <option value="Western Food">Western Food</option>
+            <option value="Healthy Food">Healthy Food</option>
+        </select><br><br>
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name='name' placeholder="e.g:Marvee"><br>
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name='email' placeholder="e.g:marvee@hacktiv8.com"><br>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name='username' placeholder="e.g:marveeyummy"><br>
-        <label for="password">Password:</label><br>
-        <input type="text" id="password" name='password'><br>
-        <input type="submit" value="Add Data">
+        <input type="text" id="name" name='name' placeholder="e.g:Ketoprak"><br>
+        <label for="day">Day : </label><br>
+        <select id="day" name="day">
+            <option selected disabled>-- Select Day --</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+        </select><br><br>
+        <label for="rating">Rating:</label><br>
+        <input type="text" id="rating" name='rating'><br>
+        <input type="submit" value="Add New Menu">
         </form>
     </center>
 </body>

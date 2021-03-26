@@ -3,11 +3,10 @@ const custRouter = require('./customerRouter')
 const menuRouter = require('./menuRouter')
 const router = express.Router()
 const AuthController = require('../controllers/AuthController')
+const MenuController = require('../controllers/menuController')
 // const isLoginMiddleware = require('../middlewares/isLoginMiddleware')
 
-router.get('/', (req, res) => {
-    res.render('Home')
-})
+router.get('/', MenuController.homePage)
 
 router.get('/login', AuthController.formLogin)
 router.post('/login', AuthController.postLogin)

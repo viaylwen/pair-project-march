@@ -18,13 +18,38 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Customer.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "name cannot be empty"
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: {
+          msg: "should be an email"
+        }
+      }
+    },
     username: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Customer',
   });
+
+  Customer.beforeCreate((customer, options) => {
+    if (!customer.username) {
+      customer.username = customer.email
+    }
+    if (!customer.password) {
+      customer.password = '1234567890'
+    }
+  })
+
   return Customer;
 };

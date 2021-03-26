@@ -1,6 +1,17 @@
 const {Menu} = require('../models')
+const starMaker = require('../helpers/starMaker')
 
 class MenuController {
+    static homePage(req, res) {
+        Menu.findAll()
+            .then(menus => {
+                res.render('home', {menus, starMaker})
+            })
+            .catch(err => {
+                res.send(err)
+            })
+    }
+
     static findAll(req, res) {
         Menu.findAll()
             .then(menus => {

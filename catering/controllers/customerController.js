@@ -30,7 +30,12 @@ class CustomerController {
                 res.redirect(`/?msg=${msg}`)
             })
             .catch(err => {
-                res.send(err)
+                let messages = []
+                console.log(err.errors)
+                err.errors.forEach(el => {
+                    messages.push(el.message)
+                });
+                res.send(messages)
             })
     }
 

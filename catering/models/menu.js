@@ -16,12 +16,29 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'MenuId'
       })
     }
+    dayMenu() {
+      return `${this.day} -- ${this.name}`
+    }
   };
+
   Menu.init({
     category: DataTypes.STRING,
-    name: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "name cannot be empty"
+        }
+      }
+    },
     day: DataTypes.STRING,
-    rating: DataTypes.INTEGER
+    rating: {
+      type: DataTypes.INTEGER,
+      validate: {
+        max: 5
+      }
+    }
   }, {
     sequelize,
     modelName: 'Menu',

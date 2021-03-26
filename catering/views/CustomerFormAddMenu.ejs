@@ -121,7 +121,7 @@
         <select name="MenuId">
             <option selected disabled>-- SELECT MENU --</option>
             <% dataMenu.forEach(el => {%>
-            <option value="<%= el.id%>"><%= el.name %></option>
+            <option value="<%= el.id%>"><%= el.dayMenu() %></option>
             <% })%>
         </select>
         <input type="submit" value="Submit">

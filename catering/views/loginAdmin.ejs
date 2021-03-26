@@ -25,7 +25,7 @@
         /* Set a style for all buttons */
         button {
           background-color: green;
-          color: white;
+          color: mediumaquamarine;
           padding: 14px 20px;
           margin: 8px 0;
           border: none;
@@ -73,18 +73,16 @@
 </head>
 <body>
     <center>
-    <form action="/login" method="POST">
+    <form action="/loginAdmin" method="POST">
         <div class="imgcontainer">
-          <h2>Login Form Customers</h2>
+          <h2>Login Form Admin</h2>
         </div>
         <div class="container">
           <label for="email"><b>Email:</b></label><br>
           <input type="text" placeholder="Enter Email" name="email" required><br>
           <label for="password"><b>Password:</b></label><br>
           <input type="password" placeholder="Enter Password" name="password" required><br>
-          <button type="submit">Login</button><br>
-          <a href="/loginAdmin"><input type="button" value="Login as Admin" class="button" style="color: white;"></a>
-          </label>
+          <button type="submit">Login as Admin</button><br>
         </div>
           <span class="psw">Don't have an account? <a href="/customer/add">Register here</a></span>
         </div>

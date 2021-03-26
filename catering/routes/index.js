@@ -12,6 +12,9 @@ router.get('/', (req, res) => {
 router.get('/login', AuthController.formLogin)
 router.post('/login', AuthController.postLogin)
 
+router.get('/loginAdmin', AuthController.formLoginAdmin)
+router.post('/loginAdmin', AuthController.postLoginAdmin)
+
 router.get('/logout', AuthController.logout)
 
 router.use('/menu', menuRouter)

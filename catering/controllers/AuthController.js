@@ -10,6 +10,15 @@ class AuthController {
         res.redirect('/')
     }
 
+    static formLoginAdmin(req, res) {
+        res.render('loginAdmin')
+    }
+
+    static postLoginAdmin(req, res) {
+        req.session.isLogin = true
+        res.redirect('/menu')
+    }
+
     static logout(req, res) {
         req.session.destroy()
         res.render('Logout')

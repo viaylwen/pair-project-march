@@ -1,4 +1,5 @@
 const {Customer, Menu, MenuOrder} = require('../models')
+const sendMail = require('../helpers/nodemailer')
 
 class CustomerController {
     static findAll(req, res) {
@@ -22,10 +23,11 @@ class CustomerController {
             username: req.body.username,
             password: req.body.password,
         }
-
         Customer.create(newCust)
             .then(customers => {
-                res.redirect('/customer')
+                sendMail(customers.email)
+                let msg = 'Thank you for registering!'
+                res.redirect(`/?msg=${msg}`)
             })
             .catch(err => {
                 res.send(err)
